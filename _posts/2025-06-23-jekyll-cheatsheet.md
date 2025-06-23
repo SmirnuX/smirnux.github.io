@@ -6,6 +6,8 @@ tags:
   - Markdown
   - Jekyll
 excerpt_separator: "<!--more-->"
+toc: true
+toc_sticky: true
 ---
 
 This article is composed based default configuration of Minimal Theme (the one theme, used for this website, obviously).
@@ -25,7 +27,12 @@ tags: - list of tags for article
   - readability
   - standard
 excerpt_separator: "<!--more-->" - optional, separator
+
 link: https://github.com - optional, link to some page
+
+toc: true - optional, table of contents
+toc_sticky: true - optional, sticky table of contents
+
 ---
 ```
 
@@ -36,6 +43,51 @@ This post has a manual excerpt `<!--more-->` set after the first paragraph. The 
 ```yaml
 excerpt_separator: "<!--more-->"
 ```
+
+## Tables
+
+Tables are the same is in regular Markdown
+
+| Item | Description | Price |
+| --- | --- | ---: |
+| item1 | item1 description | 1.00 |
+| item2 | item2 description | 100.00 |
+
+
+## Example of embedded JavaScript
+
+<!-- Embedded DVD Bouncing Text -->
+<div id="dvd-bounce-container" style="position:relative; width:100%; max-width:700px; height:200px; margin:2em auto; border-radius:16px; background:transparent;">
+  <div id="dvd-window-embedded" style="
+    position:absolute;
+    left:40px; top:30px;
+    width:120px; height:60px;
+    color:#000;
+    font-family:monospace; font-size:2em;
+    display:flex; align-items:center; justify-content:center;
+    user-select:none; pointer-events:none;
+  ">DVD</div>
+</div>
+<script>
+(function() {
+  const container = document.getElementById('dvd-bounce-container');
+  const dvd = document.getElementById('dvd-window-embedded');
+  let x = 40, y = 30;
+  let dx = 1, dy = 1;
+  const w = 120, h = 60;
+  function move() {
+    const cw = container.clientWidth, ch = container.clientHeight;
+    x += dx; y += dy;
+    if (x <= 0 || x + w >= cw) dx = -dx;
+    if (y <= 0 || y + h >= ch) dy = -dy;
+    dvd.style.left = x + 'px';
+    dvd.style.top = y + 'px';
+    requestAnimationFrame(move);
+  }
+  move();
+})();
+</script>
+
 
 ## Notices
 
@@ -75,7 +127,8 @@ Want to wrap several paragraphs or other elements in a notice? Using Liquid to c
 ```
 
 {% capture notice-2 %}
-#### New Site Features
+
+### New Site Features
 
 * You can now have cover images on blog pages
 * Drafts will now auto-save while writing
