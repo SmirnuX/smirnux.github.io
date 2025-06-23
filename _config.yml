@@ -16,8 +16,7 @@
 title: SmirnuX's Lair
 email: xomafok@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Just some useful (probably) info
-twitter_username: username
+  Some useful information (probably). If you see any mistakes - welcome to github issues.
 github_username: SmirnuX
 minimal_mistakes_skin: dirt
 search: true
@@ -57,8 +56,7 @@ plugins:
 
 author:
   name   : "Vasili Smirnov"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Thus site is collection of some useful (for me, at least) information. If you see any mistakes - welcome to github issues."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"

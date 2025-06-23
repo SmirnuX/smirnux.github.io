@@ -1,15 +1,47 @@
 ---
-title: "Post: Notice"
+title: "Jekyll cheatsheet"
 categories:
-  - Blog
+  - Cheatsheet
 tags:
-  - Post Formats
-  - notice
+  - Markdown
+  - Jekyll
+excerpt_separator: "<!--more-->"
 ---
 
-A notice displays information that explains nearby content. Often used to call attention to a particular detail.
+This article is composed based default configuration of Minimal Theme (the one theme, used for this website, obviously).
 
-When using Kramdown `{: .notice}` can be added after a sentence to assign the `.notice` to the `<p></p>` element. 
+<!--more-->
+
+## Frontmatter
+
+```md
+---
+title: "Title of this post"
+last_modified_at: 2016-03-09T16:20:02-05:00 - can be skipped
+categories: - list of categories for article
+  - Blog
+tags: - list of tags for article
+  - Post Formats
+  - readability
+  - standard
+excerpt_separator: "<!--more-->" - optional, separator
+link: https://github.com - optional, link to some page
+---
+```
+
+## More
+
+This post has a manual excerpt `<!--more-->` set after the first paragraph. The following YAML Front Matter has also to be applied:
+
+```yaml
+excerpt_separator: "<!--more-->"
+```
+
+## Notices
+
+Notices are alternative to callouts (in Obsidian, for example).
+
+When using Kramdown `{: .notice}` can be added after a sentence to assign the `.notice` to the `<p></p>` element.
 
 **Changes in Service:** We just updated our [privacy policy](#) here to better service our customers. We recommend reviewing the changes.
 {: .notice}
@@ -53,16 +85,8 @@ Want to wrap several paragraphs or other elements in a notice? Using Liquid to c
   {{ notice-2 | markdownify }}
 </div>
 
-Or you could skip the capture and stick with straight HTML.
+## Quotes
 
-```html
-<div class="notice">
-  <h4>Message</h4>
-  <p>A basic message.</p>
-</div>
-```
+> Only one thing is impossible for God: To find any sense in any copyright law on the planet.
 
-<div class="notice">
-  <h4>Message</h4>
-  <p>A basic message.</p>
-</div>
+> <cite><a href="http://www.brainyquote.com/quotes/quotes/m/marktwain163473.html">Mark Twain</a></cite>
